@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+ <!-- Cabeçalho com Navbar e Carrossel -->
+<<header>
+    <!-- Barra de navegação -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="navbar-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navbar-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Carrossel -->
+    <div class="carrossel">
+        <div class="carrossel-container">
+            <div class="slide" style="background-image: url('images/carrosel1.jpg');"></div>
+            <div class="slide" style="background-image: url('images/carrosel2.jpg');"></div>
+            <div class="slide" style="background-image: url('images/carrosel3.jpg');"></div>
+        </div>
+        <div class="carrossel-nav">
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+        </div>
+        <div class="overlay">
+            <h1>DESENVOLVEDOR DE SOFTWARE</h1>
+            <p>CRIANDO SOLUÇÕES INOVADORAS PARA O SEU PROJETO</p>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Seção Sobre -->
+    <section id="about">
+        <h2>Sobre Mim</h2>
+    
+        <p>Sou um desenvolvedor web com experiência em criar sites e aplicações. Minha paixão por tecnologia e aprendizado constante me impulsiona a sempre buscar novos desafios.</p>
+        <p>Sou um <strong>Desenvolvedor Full Stack</strong> especializado em criar soluções digitais personalizadas. Tenho paixão por <strong>construção de websites</strong>, <strong>landing pages</strong> e <strong>manutenção de sistemas</strong>.</p>
+        <p>Tenho habilidades em HTML, CSS, JavaScript, e estou constantemente aprendendo novas tecnologias para melhorar meus projetos.</p>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="services">
+        <h2>Meus Serviços</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, sapiente, sed dolores facere sit provident consequatur voluptatem quos quis fugiat eveniet velit repudiandae consequuntur, dignissimos itaque! Dolore mollitia officiis nam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aspernatur nisi ex! Repellat quaerat in doloremque, soluta debitis, consectetur incidunt vero suscipit aliquid dignissimos veniam voluptate ullam provident! Nemo, quas.</p>
+        <div class="service">
+            <h3>Construção de Websites e Landing Pages</h3>
+            <p>Desenvolvo sites responsivos, modernos e com foco na experiência do usuário. Transformo ideias em soluções digitais que geram resultados.</p>
+        </div>
+            <h3>Manutenção de Sistemas</h3>
+            <p>Cuido da manutenção e atualização de sistemas, garantindo performance e segurança contínuas para o seu negócio.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dignissimos culpa numquam nam alias eligendi amet repellat eius. Incidunt numquam fugiat delectus qui itaque dolores, nulla distinctio quia repellat velit?</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique quibusdam perferendis, ducimus necessitatibus corporis, aliquid voluptatibus molestiae nesciunt ea mollitia nihil nemo odio ex commodi praesentium delectus beatae suscipit. Non!</p>
+        </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projects">
+        <h2>Meus Projetos</h2>
+        <div class="projects-container">
+            <div class="project">
+                <img src="images/projeto1.jpg" alt="Projeto 1">
+                <h3>Projeto 1</h3>
+                <p>Descrição do projeto 1.</p>
+                <a href="#">Ver Detalhes</a>
+            </div>
+            <div class="project">
+                <img src="images/projeto2.jpg" alt="Projeto 2">
+                <h3>Projeto 2</h3>
+                <p>Descrição do projeto 2.</p>
+                <a href="#">Ver Detalhes</a>
+            </div>
+            <div class="project">
+                <img src="images/projeto2.jpg" alt="Projeto 3">
+                <h3>Projeto 3</h3>
+                <p>Descrição do projeto 3.</p>
+                <a href="#">Ver Detalhes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+<section id="contact">
+    <div class="contact-image">
+        <img src="images/contatos.jpg" alt="Imagem de Contato">
+    </div>
+    <div class="contact-info">
+        <h3>Entre em Contato</h3>
+        <p>Se você tiver alguma dúvida ou quiser conversar sobre um projeto, fique à vontade para entrar em contato comigo através do WhatsApp:</p>
+        <div class="contact-icons">
+            <!-- Botão de WhatsApp com Font Awesome -->
+            <a href="https://wa.me/seunumerodetelefone" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i> Fale comigo no WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Meu Portfólio. Todos os direitos reservados.</p>
+        <div class="contact-icons">
+            <a href="https://www.instagram.com/seuperfil" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/seunumerodetelefone" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://github.com/seuperfil" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
