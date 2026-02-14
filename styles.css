@@ -1,530 +1,305 @@
-/* Reset de margens e paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Configurações Globais */
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --accent: #38bdf8;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
 }
 
-/* Estilos gerais */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
-/* Estilo para os títulos */
-h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-}
-
-/* Seção de 'Meus Projetos' */
-#projects {
-    background-color: #f9f9f9;
-    padding: 6rem 2rem;
+/* Estilo dos Botões da Hero (O que estava faltando) */
+.hero-actions {
     display: flex;
+    gap: 1.5rem;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin-top: 2rem;
 }
 
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-around; /* Alterado para space-around */
-    width: 100%;
-}
-
-.project {
-    flex: 1 1 30%; /* Cada projeto ocupa 30% da largura */
-    background-color: #fff;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 900px; /* Altura fixa para as divs de projetos */
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease-in-out;
-    position: relative;
-}
-
-.project img {
-    width: 100%;
-    height: 700px; /* Defina uma altura fixa para as imagens */
-    object-fit: cover; /* Garante que a imagem cubra toda a área da div sem distorcer */
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.project:hover {
-    transform: scale(1.05);
-}
-
-.project h3 {
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.project p {
-    font-size: 1rem;
-    color: #777;
-}
-
-.project a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #61dafb;
+.btn-antigo-blue {
+    background-color: #21a1d1; /* Azul sólido do seu modelo antigo */
     color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
 }
 
-.project a:hover {
-    background-color: #21a1d1;
+.btn-antigo-outline {
+    background-color: transparent;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid white; /* Borda branca do modelo antigo */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
 }
 
-/* Cabeçalho com carrossel */
-.carrossel {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    overflow: hidden;
-    background-color: #000;
+.btn-antigo-blue:hover, .btn-antigo-outline:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
 }
-
-.carrossel-container {
+/* Navbar Pílula Glassmorphism */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 70px;
     display: flex;
-    width: 300%;
-    height: 100%;
-    transition: transform 1s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    z-index: 1000;
+    transition: top 0.4s ease;
 }
 
-.slide {
-    width: 100%;
-    height: 100%;
+.logo { color: #fff; font-size: 1.3rem; font-weight: 800; font-family: 'Montserrat'; }
+.logo span { color: var(--accent); }
+
+.navbar-links { display: flex; gap: 2rem; }
+.navbar-links a { 
+    text-decoration: none; 
+    color: var(--text-main); 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+}
+.navbar-links a:hover { color: var(--accent); }
+
+/* Hero Section Profissional */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('images/fundo1.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-}
-
-.overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.overlay h1 {
-    font-size: 3rem;
-}
-
-.overlay p {
-    font-size: 1.5rem;
-}
-
-/* Navbar */
-nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 1rem 2rem;
-}
-
-.navbar-logo img {
-    height: 40px; /* Ajuste o tamanho do logo */
-}
-
-.navbar-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.navbar-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-family: 'Open Sans', sans-serif; /* Aplicando a mesma fonte */
-}
-
-.navbar-links a:hover {
-    color: #61dafb; /* Cor ao passar o mouse */
-    transform: translateY(-3px); /* Efeito de elevação */
-}
-
-/* Botão ativo da Navbar */
-.navbar-links a.active {
-    color: #61dafb; /* Cor ativa */
-    font-weight: 600; /* Maior destaque no botão ativo */
-}
-
-/* Estilo geral da Navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 1rem 2rem;
-    font-family: 'Roboto', sans-serif; /* Definindo a fonte da navbar */
-}
-
-/* Logo da Navbar */
-.navbar-logo img {
-    height: 40px; /* Ajuste o tamanho do logo */
-}
-
-/* Alinhar e estilizar os links da Navbar */
-.navbar-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center; /* Centraliza os links na navbar */
-    flex-grow: 1; /* Permite que os links se espalhem e ocupem o espaço disponível */
-}
-
-.navbar-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-family: 'Open Sans', sans-serif; /* Fonte dos itens da navbar */
-}
-
-/* Efeito ao passar o mouse sobre os itens da navbar */
-.navbar-links a:hover {
-    color: #61dafb; /* Cor de destaque ao passar o mouse */
-    transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
-}
-
-/* Itens ativos da Navbar */
-.navbar-links a.active {
-    color: #61dafb; /* Cor ativa para o item */
-    font-weight: 600; /* Negrito para o item ativo */
-}
-
-/* Navbar responsiva */
-@media (max-width: 768px) {
-    .navbar-links {
-        display: none;
-        width: 100%;
-        justify-content: center;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #333;
-        padding: 1rem 0;
-        gap: 1rem;
-        transition: transform 0.3s ease;
-        transform: translateY(-100%); /* Inicialmente fora da tela */
-    }
-
-    .navbar-links.active {
-        display: flex;
-        transform: translateY(0); /* Exibe os links ao clicar */
-    }
-
-    .navbar-links a {
-        color: white;
-        font-size: 1.5rem; /* Aumenta o tamanho do texto em telas menores */
-    }
-
-    .navbar-toggle {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 0.3rem;
-    }
-
-    .navbar-toggle div {
-        width: 30px;
-        height: 4px;
-        background-color: white;
-    }
-}
-
-/* Botão de alternância (menu mobile) */
-.navbar-toggle {
-    display: none; /* Esconde o botão de alternância por padrão */
-}
-
-@media (max-width: 768px) {
-    .navbar-toggle {
-        display: flex; /* Exibe o botão de alternância em telas menores */
-    }
-}
-
-
-/* Navegação do Carrossel */
-.carrossel-nav {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    right: 10px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    transform: translateY(-50%);
-}
-
-.carrossel-nav button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 2rem;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-}
-
-.carrossel-nav button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Seções */
-section {
-    padding: 3rem 0;
+    justify-content: center;
     text-align: center;
 }
 
-#about, #services {
-    background-color: #f9f9f9; /* Fundo claro */
-    padding: 5rem 2rem; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    color: #333; /* Cor do texto */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
-    border-radius: 8px; /* Bordas arredondadas */
-    margin: 4rem auto; /* Margem automática para centralizar a seção */
-    max-width: 1200px; /* Limita a largura da seção */
-    background-size: cover; /* Faz a imagem cobrir toda a seção */
-    background-position: center; /* Centraliza a imagem */
-    background-attachment: fixed; /* Fixar a imagem de fundo */
-}
-
-#services {
-    background-image: url('images/fundo-servicos.jpg'); /* Imagem de fundo para os serviços */
-}
-
-#about h2, #services h2 {
-    font-size: 2.5rem; /* Tamanho do título */
-    font-weight: bold; /* Negrito para destaque */
-    margin-bottom: 1.5rem; /* Espaçamento abaixo do título */
-    color: #333; /* Cor do título */
-}
-
-#about p, #services p {
-    font-size: 1.2rem; /* Tamanho do texto */
-    color: #555; /* Cor do texto */
-    line-height: 1.6; /* Maior espaçamento entre as linhas */
-    margin-bottom: 1rem; /* Espaçamento entre os parágrafos */
-    max-width: 900px; /* Limita a largura para leitura mais confortável */
-    margin-left: auto; /* Centraliza o texto */
-    margin-right: auto; /* Centraliza o texto */
-}
-
-#about strong, #services strong {
-    font-weight: bold; /* Distinguir texto em negrito */
-    color: #61dafb; /* Cor chamativa para as palavras em negrito */
-}
-
-/* Seção de "Entre em Contato" */
-#contact {
-    padding: 4rem 2rem;
-    background-color: #fff;
-    color: #333;
-    margin: 4rem auto; /* Igual às seções #about e #services */
-    max-width: 1200px; /* Limita a largura máxima */
-    display: flex;
-    justify-content: space-between;
+/* Isso alinha o ícone e o texto dentro dos botões da Hero */
+.hero-actions a {
+    display: inline-flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    gap: 10px; /* Cria o espaço entre o ícone e o texto */
 }
 
-/* Estilo para a imagem de contato */
-.contact-image img {
-    width: 100%;
-    max-width: 500px; /* Limita a largura da imagem */
-    border-radius: 8px; /* Bordas arredondadas na imagem */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+.hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-family: 'Montserrat'; }
+.gradient-text {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* Estilo para o conteúdo de informações de contato */
-.contact-info {
-    max-width: 600px;
-    text-align: left;
+/* DESTAQUE PARA O CARGO */
+.hero h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #cbd5e1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    font-weight: 700;
+}
+/* --- Seção Sobre Mim (Branca) --- */
+.light-section {
+    background-color: #ffffff; /* Fundo totalmente branco */
+    color: #1e293b;
+    padding: 10rem 2rem; /* Aumentei o respiro da seção */
 }
 
-/* Título da seção de informações de contato */
-.contact-info h3 {
+.about-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    text-align: left !important;
+}
+
+.about-text h2 {
+    color: #0f172a;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2rem;
     font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #333; /* Cor do título */
-    text-transform: uppercase; /* Deixa o título em maiúsculas */
 }
 
-/* Parágrafos na seção de informações de contato */
-.contact-info p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-    color: #555; /* Cor do texto */
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(249, 250, 250, 0.1);
 }
 
-/* Estilo para os ícones de contato */
-.contact-icons {
+/* --- Seção de Serviços (Dark Blue & Maior) --- */
+.dark-section-services {
+    padding: 12rem 2rem; /* Aumentei bastante o padding para a section ficar maior */
+    background-color: #c0c5d1; /* O azul escuro que você prefere */
+    color: #ffffff;
+    text-align: center;
+}
+
+.dark-section-services h2 {
+    color: var(--accent); /* O azul claro de destaque */
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.services-grid {
     display: flex;
-    justify-content: flex-start;
-    gap: 1.5rem; /* Espaço entre os ícones */
-    margin-top: 1.5rem;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* Estilo para cada ícone de contato */
-.contact-icons a {
-    display: inline-block;
-    transition: transform 0.3s ease;
+.service-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    transition: 0.3s;
 }
 
-.contact-icons img, .contact-icons i {
-    width: 45px;
-    height: 45px;
-    transition: transform 0.3s ease;
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
 }
 
-.contact-icons img:hover, .contact-icons i:hover {
-    transform: scale(1.1); /* Aumenta o ícone quando o mouse passa por cima */
-    color: #61dafb; /* Cor ao passar o mouse */
+.service-card i {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
 }
+
+
+/* Quando a tela for menor que 768px (Mobile) */
+
+/* Seções Dark Unificadas */
+.dark-section {
+    padding: 8rem 2rem;
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container { max-width: 1100px; margin: 0 auto; text-align: center; }
+h2 { font-family: 'Montserrat'; margin-bottom: 3rem; color: var(--accent); }
+
+
+
+/* Container que segura os projetos */
+/* Container que segura os projetos - Configuração para Desktop */
+.projects-container { 
+    display: flex; 
+    flex-direction: row;      
+    flex-wrap: wrap;          /* Permitir quebra é essencial para o mobile funcionar */
+    gap: 2rem; 
+    justify-content: center;  
+    align-items: stretch;     
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Ajuste no Card individual */
+.project {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    /* Isso garante que ele tente ocupar 1/3 da linha, descontando o gap */
+    flex: 1 1 calc(33.333% - 2rem); 
+    max-width: 380px;         
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;   
+}
+
+.project:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--accent); 
+}
+
+.project img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.project-info { 
+    padding: 1.5rem; 
+    text-align: left;
+    flex-grow: 1;             /* Faz o conteúdo expandir para preencher o card */
+}
+/* Botão WhatsApp */
+.whatsapp-button {
+    background-color: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Footer Glass */
+footer {
+    padding: 4rem 2rem;
+    background: rgba(15, 23, 42, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+.contact-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; }
+.contact-icons i { font-size: 2rem; color: #fff; transition: 0.3s; }
+.contact-icons i:hover { color: var(--accent); transform: scale(1.2); }
+
+
+
+
+/* --- ESTAS REGRAS DEVEM FICAR NO FINAL DO SEU CSS --- */
 
 @media (max-width: 1024px) {
-    .projects-container {
-        justify-content: center; /* Centraliza os projetos */
-    }
-
     .project {
-        flex: 1 1 45%; /* 2 projetos por linha */
-    }
-
-    #projects, #services {
-        padding: 4rem 2rem;
+        /* Em tablets, ocupa quase metade da tela */
+        flex: 1 1 calc(50% - 2rem); 
+        max-width: 450px;
     }
 }
 
 @media (max-width: 768px) {
-    #contact {
-        flex-direction: column; /* Organiza as divs em coluna em telas menores */
+    .projects-container {
+        flex-direction: column; /* Força um abaixo do outro */
         align-items: center;
     }
 
-    .contact-image img {
-        max-width: 90%; /* Ajusta a largura da imagem para telas menores */
-        margin-bottom: 2rem; /* Adiciona espaço abaixo da imagem */
-    }
-
-    .contact-info {
-        text-align: center; /* Centraliza o texto nas telas menores */
-    }
-
-    .contact-icons {
-        justify-content: center; /* Centraliza os ícones */
-    }
-
     .project {
-        flex: 1 1 100%; /* 1 projeto por linha em telas menores */
+        width: 100%;            /* Ocupa a largura total no celular */
+        flex: 1 1 100%;
+        max-width: 400px;
     }
-
-    #projects, #services {
-        padding: 3rem 1rem;
-    }
-
-    #about, #services {
-        padding: 4rem 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .project {
-        flex: 1 1 100%; /* 1 projeto por linha */
-    }
-
-    #projects {
-        padding: 2rem 1rem;
-    }
-}
-
-/* Estilo do botão de WhatsApp */
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #25D366; /* Cor do WhatsApp */
-    color: white;
-    text-decoration: none;
-    padding: 0.8rem 2rem;
-    border-radius: 50px; /* Bordas arredondadas */
-    font-size: 1.4rem;
-    font-weight: bold;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-.whatsapp-button i {
-    margin-right: 0.8rem; /* Espaço entre o ícone e o texto */
-    font-size: 1.7rem; /* Tamanho do ícone */
-}
-
-/* Efeito de hover */
-.whatsapp-button:hover {
-    background-color: #128C7E; /* Cor mais escura do WhatsApp ao passar o mouse */
-    transform: translateY(-5px); /* Efeito de elevação */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
-}
-
-/* Rodapé */
-footer {
-    background-color: #282c34;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-footer .contact-icons {
-    display: flex; /* Usando Flexbox para organizar os ícones */
-    justify-content: center; /* Centraliza os ícones horizontalmente */
-    align-items: center; /* Alinha os ícones verticalmente, caso necessário */
-}
-
-footer .contact-icons a {
-    list-style: none; /* Remove o ponto de lista (se houver) */
-    text-decoration: none; /* Remove qualquer sublinhado dos links */
-    margin: 0 10px; /* Adiciona um espaço entre os ícones */
-}
-
-footer .contact-icons img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
-footer .contact-icons img:hover {
-    transform: scale(1.1);
-}
-.contact-icons i {
-    font-size: 2.5rem; /* Aumenta o tamanho do ícone */
-    color: white; /* Muda a cor do ícone para branco */
-    margin: 0 15px; /* Ajusta o espaçamento entre os ícones */
-    transition: color 0.3s ease; /* Efeito suave ao mudar a cor */
-}
-
-.contact-icons i:hover {
-    color: #61dafb; /* Cor ao passar o mouse */
 }

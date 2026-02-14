@@ -1,36 +1,33 @@
-// Variáveis
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-const totalSlides = slides.length;
+/**
+ * Gerenciador de Interface - Portfólio Neto
+ */
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("mainNavbar");
+    const navLinks = document.getElementById("navLinks");
+    let lastScrollTop = 0;
 
-// Função para exibir o slide correto
-function showSlide(index) {
-    const container = document.querySelector('.carrossel-container');
-    const slideWidth = slides[0].clientWidth;
-    container.style.transform = `translateX(-${index * slideWidth}px)`;
-}
+    // 1. Função do Menu Mobile
+    window.toggleMenu = () => {
+        navLinks.classList.toggle("active");
+    };
 
-// Função para ir para o próximo slide
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-}
+    // 2. Comportamento da Navbar ao Rolar
+    window.addEventListener("scroll", () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-// Função para ir para o slide anterior
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    showSlide(currentSlide);
-}
+        // Se o menu mobile estiver aberto, não escondemos a barra
+        if (navLinks.classList.contains("active")) return;
 
-// Navegação automática
-setInterval(nextSlide, 4000);
+        if (scrollTop > lastScrollTop && scrollTop > 150) {
+            navbar.style.top = "-100px"; // Esconde ao descer
+        } else {
+            navbar.style.top = "20px";  // Mostra ao subir
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true });
 
-// Adicionar os eventos para navegação manual
-document.querySelector('.next').addEventListener('click', nextSlide);
-document.querySelector('.prev').addEventListener('click', prevSlide);
-
-function toggleMenu() {
-    const navbarLinks = document.querySelector('.navbar-links');
-    navbarLinks.classList.toggle('active');
-}
-
+    // 3. UX: Fecha o menu automaticamente ao clicar em um link
+    document.querySelectorAll(".navbar-links a").forEach(link => {
+        link.addEventListener("click", () => navLinks.classList.remove("active"));
+    });
+});

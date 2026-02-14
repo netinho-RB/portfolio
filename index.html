@@ -3,139 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>Code.Lab | Neto</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
 
- <!-- Cabeçalho com Navbar e Carrossel -->
-<<header>
-    <!-- Barra de navegação -->
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="logo.png" alt="Logo">
-        </div>
-        <div class="navbar-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="navbar-links">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-    
-    <!-- Carrossel -->
-    <div class="carrossel">
-        <div class="carrossel-container">
-            <div class="slide" style="background-image: url('images/carrosel1.jpg');"></div>
-            <div class="slide" style="background-image: url('images/carrosel2.jpg');"></div>
-            <div class="slide" style="background-image: url('images/carrosel3.jpg');"></div>
-        </div>
-        <div class="carrossel-nav">
-            <button class="prev">‹</button>
-            <button class="next">›</button>
-        </div>
-        <div class="overlay">
-            <h1>DESENVOLVEDOR DE SOFTWARE</h1>
-            <p>CRIANDO SOLUÇÕES INOVADORAS PARA O SEU PROJETO</p>
-        </div>
-    </div>
-</header>
-
-
-    <!-- Seção Sobre -->
-    <section id="about">
-        <h2>Sobre Mim</h2>
-    
-        <p>Sou um desenvolvedor web com experiência em criar sites e aplicações. Minha paixão por tecnologia e aprendizado constante me impulsiona a sempre buscar novos desafios.</p>
-        <p>Sou um <strong>Desenvolvedor Full Stack</strong> especializado em criar soluções digitais personalizadas. Tenho paixão por <strong>construção de websites</strong>, <strong>landing pages</strong> e <strong>manutenção de sistemas</strong>.</p>
-        <p>Tenho habilidades em HTML, CSS, JavaScript, e estou constantemente aprendendo novas tecnologias para melhorar meus projetos.</p>
-    </section>
-
-    <!-- Seção de Serviços -->
-    <section id="services">
-        <h2>Meus Serviços</h2>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, sapiente, sed dolores facere sit provident consequatur voluptatem quos quis fugiat eveniet velit repudiandae consequuntur, dignissimos itaque! Dolore mollitia officiis nam.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aspernatur nisi ex! Repellat quaerat in doloremque, soluta debitis, consectetur incidunt vero suscipit aliquid dignissimos veniam voluptate ullam provident! Nemo, quas.</p>
-        <div class="service">
-            <h3>Construção de Websites e Landing Pages</h3>
-            <p>Desenvolvo sites responsivos, modernos e com foco na experiência do usuário. Transformo ideias em soluções digitais que geram resultados.</p>
-        </div>
-            <h3>Manutenção de Sistemas</h3>
-            <p>Cuido da manutenção e atualização de sistemas, garantindo performance e segurança contínuas para o seu negócio.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dignissimos culpa numquam nam alias eligendi amet repellat eius. Incidunt numquam fugiat delectus qui itaque dolores, nulla distinctio quia repellat velit?</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique quibusdam perferendis, ducimus necessitatibus corporis, aliquid voluptatibus molestiae nesciunt ea mollitia nihil nemo odio ex commodi praesentium delectus beatae suscipit. Non!</p>
-        </div>
-    </section>
-
-    <!-- Seção de Projetos -->
-    <section id="projects">
-        <h2>Meus Projetos</h2>
-        <div class="projects-container">
-            <div class="project">
-                <img src="images/projeto1.jpg" alt="Projeto 1">
-                <h3>Projeto 1</h3>
-                <p>Descrição do projeto 1.</p>
-                <a href="#">Ver Detalhes</a>
+    <header>
+        <nav class="navbar" id="mainNavbar">
+            <div class="navbar-logo">
+                <div class="logo">Code<span>.Lab</span></div>
             </div>
-            <div class="project">
-                <img src="images/projeto2.jpg" alt="Projeto 2">
-                <h3>Projeto 2</h3>
-                <p>Descrição do projeto 2.</p>
-                <a href="#">Ver Detalhes</a>
+            
+            <div class="navbar-toggle" onclick="toggleMenu()">
+                <div></div><div></div><div></div>
             </div>
-            <div class="project">
-                <img src="images/projeto2.jpg" alt="Projeto 3">
-                <h3>Projeto 3</h3>
-                <p>Descrição do projeto 3.</p>
-                <a href="#">Ver Detalhes</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Seção de Contato -->
-<section id="contact">
-    <div class="contact-image">
-        <img src="images/contatos.jpg" alt="Imagem de Contato">
-    </div>
-    <div class="contact-info">
-        <h3>Entre em Contato</h3>
-        <p>Se você tiver alguma dúvida ou quiser conversar sobre um projeto, fique à vontade para entrar em contato comigo através do WhatsApp:</p>
-        <div class="contact-icons">
-            <!-- Botão de WhatsApp com Font Awesome -->
-            <a href="https://wa.me/seunumerodetelefone" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i> Fale comigo no WhatsApp
+            <div class="navbar-links" id="navLinks">
+                <a href="#projects">Projetos</a>
+                <a href="#about">Sobre</a>
+                <a href="#services">Serviços</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </nav>
+
+      <section class="hero">
+    <div class="hero-content">
+        <span class="badge">Disponível para novos projetos</span>
+        <h1>Nestor <span class="gradient-text">Nunes</span></h1>
+        <h2>ENGENHEIRO DE SOFTWARE FULL STACK</h2>
+        <p>Construindo experiências digitais modernas com foco em performance e design minimalista.</p>
+        
+        <div class="hero-actions">
+            <a href="#projects" class="btn-antigo-blue">
+                <i class="fas fa-eye"></i> Ver Projetos
+            </a>
+            <a href="https://github.com/seuperfil" target="_blank" class="btn-antigo-outline">
+                <i class="fab fa-github"></i> GitHub
             </a>
         </div>
     </div>
 </section>
+    </header>
+<section id="about" class="light-section">
+    <div class="container about-grid">
+        <div class="about-text">
+            <h2>Sobre Mim</h2>
+            <p>Sou um desenvolvedor web apaixonado por criar soluções que unem design e funcionalidade. Com foco constante em tecnologias modernas, busco sempre o próximo desafio técnico.</p>
+            <p>Especializado em <strong>Java</strong>, <strong>Android</strong> e ecossistemas <strong>Web</strong>, transformo requisitos complexos em interfaces intuitivas e códigos performáticos.</p>
+        </div>
+        <div class="about-image">
+            <img src="images/carrosel1.jpg" alt="Neto trabalhando">
+        </div>
+    </div>
+</section>
 
-    
+    <section id="services" class="dark-section">
+        <div class="container">
+            <h2>Meus Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criação de Landing Pages e Aplicações Web responsivas e otimizadas para SEO.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Aplicações Mobile</h3>
+                    <p>Desenvolvimento focado em Android, priorizando performance e usabilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Meu Portfólio. Todos os direitos reservados.</p>
-        <div class="contact-icons">
-            <a href="https://www.instagram.com/seuperfil" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/seunumerodetelefone" target="_blank" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://github.com/seuperfil" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
+    <section id="projects" class="dark-section">
+        <div class="container">
+            <h2>Projetos Anteriores</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <img src="images/projeto1.jpg" alt="Projeto 1">
+                    <div class="project-info">
+                        <h3>Dashboard Analytics</h3>
+                        <p>Interface moderna para monitoramento de dados em tempo real.</p>
+                        <a href="#" class="view-details">Ver Detalhes</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/projeto2.jpg" alt="Projeto 2">
+                    <div class="project-info">
+                        <h3>E-commerce Web</h3>
+                        <p>Plataforma completa focada em conversão e experiência de compra.</p>
+                        <a href="#" class="view-details">Ver Detalhes</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/carrosel1.jpg" alt="Projeto 3">
+                    <div class="project-info">
+                        <h3>E-commerce Web</h3>
+                        <p>Plataforma completa focada em conversão e experiência de compra.</p>
+                        <a href="#" class="view-details">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="dark-section">
+        <div class="container">
+            <h3>Vamos trabalhar juntos?</h3>
+            <p>Se você tem um projeto ou apenas quer bater um papo sobre tecnologia, entre em contato!</p>
+            <a href="https://wa.me/seunumerodetelefone" target="_blank" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
             </a>
         </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Neto.dev - Todos os direitos reservados.</p>
+            <div class="contact-icons">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
     </footer>
-    
 
     <script src="script.js"></script>
 </body>
